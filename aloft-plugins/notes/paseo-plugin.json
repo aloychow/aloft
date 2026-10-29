@@ -1,0 +1,6 @@
+{
+  "id": "notes",
+  "name": "Notes",
+  "description": "Markdown notes with daily notes, links, tags, search, quick capture, and agent tools",
+  "requirements": { "paseo": ">=0.14.0-beta.2" }
+}

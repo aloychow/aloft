@@ -1,0 +1,19 @@
+{
+  "name": "@aloft/plugin-notes",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Aloft Notes: a Markdown vault module for the Aloft daemon and apps",
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsgo -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@codemirror/autocomplete": "^6.20.3",
+    "@codemirror/commands": "^6.11.1",
+    "@codemirror/lang-markdown": "^6.5.2",
+    "@codemirror/language": "^6.13.1",
+    "@codemirror/state": "^6.7.6",
+    "@codemirror/view": "^6.43.14",
+    "@lezer/highlight": "^1.2.5"
+  }
+}
