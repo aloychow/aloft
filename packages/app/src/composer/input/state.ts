@@ -168,11 +168,23 @@ export function resolveMessageInputEnterAction(
   ctx: MessageInputEnterContext,
 ): MessageInputEnterAction | null {
   if (!ctx.submitOnEnter) return null;
-  if (ctx.shiftKey) return null;
   const hasModifier = ctx.metaKey || ctx.ctrlKey;
-  if (ctx.sendShortcut === "mod-enter") return hasModifier ? "default-send" : null;
+  if (ctx.sendShortcut === "mod-enter") return resolveModEnterAction(ctx, hasModifier);
+  if (ctx.shiftKey) return null;
   if (hasModifier && ctx.isAgentRunning && ctx.onQueue) return "alternate-send";
   return "default-send";
+}
+
+// Enter and Shift+Enter insert a new line. Mod+Enter sends. Mod+Shift+Enter takes the alternate
+// action while the agent runs (the slot plain Mod+Enter fills when Enter sends); otherwise Shift
+// keeps its new line.
+function resolveModEnterAction(
+  ctx: MessageInputEnterContext,
+  hasModifier: boolean,
+): MessageInputEnterAction | null {
+  if (!hasModifier) return null;
+  if (!ctx.shiftKey) return "default-send";
+  return ctx.isAgentRunning && ctx.onQueue ? "alternate-send" : null;
 }
 
 export function runMessageInputKeyboardAction(

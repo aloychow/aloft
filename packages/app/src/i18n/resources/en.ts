@@ -2463,10 +2463,11 @@ export const en = {
         },
         commandEnterDescriptions: {
           interrupt:
-            "When the agent is running, {{modifier}}+Enter interrupts. Enter inserts a new line.",
+            "When the agent is running, {{modifier}}+Enter interrupts and {{modifier}}+Shift+Enter queues. Enter inserts a new line.",
           steer:
-            "When the agent is running, {{modifier}}+Enter steers the active turn. Enter inserts a new line.",
-          queue: "When the agent is running, {{modifier}}+Enter queues. Enter inserts a new line.",
+            "When the agent is running, {{modifier}}+Enter steers the active turn and {{modifier}}+Shift+Enter queues. Enter inserts a new line.",
+          queue:
+            "When the agent is running, {{modifier}}+Enter queues and {{modifier}}+Shift+Enter submits. Enter inserts a new line.",
         },
         options: {
           interrupt: "Interrupt",

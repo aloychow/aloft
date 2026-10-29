@@ -163,7 +163,7 @@ export const DEFAULT_CLIENT_SETTINGS: AppSettings = {
   chatDisplay: "collapseTurns",
   chatOutlineEnabled: true,
   vimKeybindings: false,
-  sendShortcut: "enter",
+  sendShortcut: "mod-enter",
   filePanelAssociations: {},
   openInSidePane: DEFAULT_OPEN_IN_SIDE_PANE_PREFERENCES,
   pullRequestOpenLocation: "explorer",
@@ -268,7 +268,7 @@ const StoredAppSettingsSchema = z
     compactToolCalls: z.boolean().optional().catch(undefined),
     chatOutlineEnabled: z.boolean().catch(true),
     vimKeybindings: z.boolean().catch(false),
-    sendShortcut: z.enum(["enter", "mod-enter"]).catch("enter"),
+    sendShortcut: z.enum(["enter", "mod-enter"]).catch("mod-enter"),
     filePanelAssociations: z.record(z.string(), z.string()).catch({}),
     openInSidePane: z
       .object({
