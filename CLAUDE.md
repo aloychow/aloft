@@ -23,6 +23,7 @@ At the start of non-trivial work, list `docs/` and skim anything relevant to the
 
 | Doc                                                                  | What's in it                                                                                                                   |
 | -------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| [docs/aloft.md](docs/aloft.md)                                       | Aloft fork: personal preferences, scope, lineage, and upstream update workflow                                                 |
 | [docs/product.md](docs/product.md)                                   | What Paseo is, who it's for, where it's going                                                                                  |
 | [docs/architecture.md](docs/architecture.md)                         | System design, package layering, WebSocket protocol, agent lifecycle, data flow                                                |
 | [docs/agent-lifecycle.md](docs/agent-lifecycle.md)                   | Agent states, parent/child relationships, archive semantics, tabs vs archive, subagents track                                  |

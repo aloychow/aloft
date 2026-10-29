@@ -1,3 +1,16 @@
+# Aloft
+
+A personal desktop workspace for coding agents, forked from
+[Paseo](https://github.com/getpaseo/paseo).
+
+Aloft keeps Paseo's existing agent runtimes, project management, terminals, and
+diff review as its foundation. See [Aloft project notes](docs/aloft.md) for the
+customization direction and development workflow.
+
+The upstream README follows. Its downloads and release links install Paseo.
+
+---
+
 <p align="center">
   <img src="packages/website/public/logo.svg" width="64" height="64" alt="Paseo logo">
 </p>
