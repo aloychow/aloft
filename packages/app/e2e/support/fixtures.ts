@@ -183,7 +183,11 @@ const test = daemonTest.extend<{
           // New installs collapse finished turns; specs assert on the rows inside them, so they
           // start from the full chat unless they seed their own settings.
           if (!localStorage.getItem("@paseo:app-settings")) {
-            localStorage.setItem("@paseo:app-settings", JSON.stringify({ chatDisplay: "full" }));
+            // Aloft defaults to Cmd/Ctrl+Enter; the suite submits prompts with plain Enter.
+            localStorage.setItem(
+              "@paseo:app-settings",
+              JSON.stringify({ chatDisplay: "full", sendShortcut: "enter" }),
+            );
           }
         },
         {

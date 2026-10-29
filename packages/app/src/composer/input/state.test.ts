@@ -412,6 +412,51 @@ describe("resolveMessageInputEnterAction", () => {
     ).toBe("default-send");
   });
 
+  it("keeps Cmd+Enter as the default send while running when modifier Enter sends", () => {
+    expect(
+      resolveMessageInputEnterAction(
+        enterContext({ sendShortcut: "mod-enter", metaKey: true, isAgentRunning: true }),
+      ),
+    ).toBe("default-send");
+  });
+
+  it("takes the alternate send on Cmd+Shift+Enter while running when modifier Enter sends", () => {
+    expect(
+      resolveMessageInputEnterAction(
+        enterContext({
+          sendShortcut: "mod-enter",
+          metaKey: true,
+          shiftKey: true,
+          isAgentRunning: true,
+        }),
+      ),
+    ).toBe("alternate-send");
+    expect(
+      resolveMessageInputEnterAction(
+        enterContext({
+          sendShortcut: "mod-enter",
+          ctrlKey: true,
+          shiftKey: true,
+          isAgentRunning: true,
+        }),
+      ),
+    ).toBe("alternate-send");
+  });
+
+  it("keeps the new line on Cmd+Shift+Enter while running without a queue handler", () => {
+    expect(
+      resolveMessageInputEnterAction(
+        enterContext({
+          sendShortcut: "mod-enter",
+          metaKey: true,
+          shiftKey: true,
+          isAgentRunning: true,
+          onQueue: undefined,
+        }),
+      ),
+    ).toBeNull();
+  });
+
   it("returns null for plain and Shift+Enter when modifier Enter sends", () => {
     expect(resolveMessageInputEnterAction(enterContext({ sendShortcut: "mod-enter" }))).toBeNull();
     expect(
