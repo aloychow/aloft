@@ -57,6 +57,8 @@ Notes, so the dev build never edits the real vault in `~/Documents/Aloft Notes`.
 - `origin` points to `aloychow/aloft`.
 - `upstream` points to `getpaseo/paseo`. Its local push URL is disabled.
 - `main` carries Aloft's changes. Each change gets a feature branch.
+- After each major change, commit with a message that says what changed, why, and which
+  tests ran; merge the branch into `main`; push `main` (and the branch) to `origin`.
 
 To pull in upstream changes, start from a clean working tree:
 
